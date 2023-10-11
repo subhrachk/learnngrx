@@ -1,6 +1,12 @@
 <h1>BlogList</h1>
-<div *ngFor="let blog of (blogs$ | async)">
-    <mat-card>
-        {{blog.id}} | {{blog.title}} | {{blog.description}}
+<div class="BolgDetails">
+    <button mat-raised-button color="accent" (click)="openNewBlogForm()">New Blog</button>
+    <mat-card *ngFor="let blog of (blogs$ | async)">
+        <mat-card-header>
+            {{blog.title}}
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{blog.description}}</p>
+        </mat-card-content>
     </mat-card>
 </div>
