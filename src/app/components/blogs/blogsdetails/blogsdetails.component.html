@@ -1,6 +1,6 @@
 <h1>BlogList</h1>
 <div *ngFor="let blog of (blogs$ | async)">
-    <div>
+    <mat-card>
         {{blog.id}} | {{blog.title}} | {{blog.description}}
-    </div>
+    </mat-card>
 </div>

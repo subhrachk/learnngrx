@@ -20,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { blogreducer } from './components/shared/blogs/BlogReducer';
 import { BlogEffects } from './components/shared/blogs/BlogEffects';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { BlogEffects } from './components/shared/blogs/BlogEffects';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
