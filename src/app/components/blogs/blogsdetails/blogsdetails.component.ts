@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { BlogList, blog } from '../../shared/blogs/BlogModel';
+import { Store } from '@ngrx/store';
+import { loadblog } from '../../shared/blogs/BlogActions';
 
 @Component({
   selector: 'app-blogsdetails',
@@ -7,9 +11,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogsdetailsComponent implements OnInit {
 
-  constructor() { }
+  blogs$ !: Observable<blog[]>;
+  constructor(private store : Store<BlogList>) { }
 
   ngOnInit(): void {
+    this.store.dispatch(loadblog());
   }
 
 }

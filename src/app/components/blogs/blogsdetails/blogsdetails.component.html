@@ -1,1 +1,6 @@
-<p>blogsdetails works!</p>
+<h1>BlogList</h1>
+<div *ngFor="let blog of (blogs$ | async)">
+    <div>
+        {{blog.id}} | {{blog.title}} | {{blog.description}}
+    </div>
+</div>

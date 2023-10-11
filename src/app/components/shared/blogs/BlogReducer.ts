@@ -7,8 +7,7 @@ export const blogreducer = createReducer(
     bloginitialstate,
     on(loadblogsuccess,(state,action)=>{
         return {
-            ...state,
-            action
+            Blogs : [...action.Blogs]
         }
     })
-)
+);

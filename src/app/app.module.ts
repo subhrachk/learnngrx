@@ -18,6 +18,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { blogreducer } from './components/shared/blogs/BlogReducer';
+import { BlogEffects } from './components/shared/blogs/BlogEffects';
 
 @NgModule({
   declarations: [
@@ -35,8 +37,8 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({}, {}),
-    EffectsModule.forRoot([]),
+    StoreModule.forRoot({BlogList : blogreducer}, {}),
+    EffectsModule.forRoot([BlogEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     FormsModule,
     ReactiveFormsModule,
